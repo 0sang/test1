@@ -1,17 +1,18 @@
 package MBTI.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name = "MBTI")
+@Data
 public class Mbti {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "MBTI_INDEX")
-    private Long mbtiIndex;
 
+    @Id
     @Column(name = "MBTI_NAME")
-    private String mbtiName;
+    private String name;
 
     @Column(name = "MBTI_DESC")
-    private String mbtiDesc;
+    private String desc;
 }

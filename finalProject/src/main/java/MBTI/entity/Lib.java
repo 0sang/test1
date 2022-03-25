@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class Lib {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LIB_INDEX")
     private int libIndex;
 
@@ -18,6 +19,6 @@ public class Lib {
     private Book isbn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID")
-    private User userId;
+    @JoinColumn(name = "USER_ID", nullable = false)
+    private User user;
 }

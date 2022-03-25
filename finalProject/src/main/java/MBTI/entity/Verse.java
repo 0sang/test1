@@ -10,24 +10,20 @@ import javax.persistence.*;
 public class Verse {
 
     @Id
-    @Column(name = "INDEX")
+    @Column(name = "VERSE_INDEX")
     private int index;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ISBN", nullable = false)
-    private Book isbn;
+    @JoinColumn(name = "BOOK_ISBN", nullable = false)
+    private Book book;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID", nullable = false)
-    private User writer;
+    private User user;
 
-    @Column(name = "VERSE")
+    @Column(name = "PICKED_VERSE", nullable = false)
     private String verse;
 
-    @Column(name = "PAGE")
+    @Column(name = "PAGE_NUM")
     private int page;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "")
-    private Like like;
 }

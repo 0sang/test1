@@ -13,6 +13,7 @@ import static javax.persistence.FetchType.*;
 public class Board {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "POST_INDEX")
     private int postIndex;
 

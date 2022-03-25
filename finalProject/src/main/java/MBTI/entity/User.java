@@ -20,7 +20,7 @@ public class User {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "MBTI")
+    @JoinColumn(name = "MBTI_NAME")
     @OneToOne(fetch = FetchType.LAZY)
     private Mbti mbti;
 

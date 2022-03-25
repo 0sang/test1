@@ -28,9 +28,6 @@ public class Book {
     @Column(name = "PRICE", nullable = false)
     private int price;
 
-    @Column(name = "DISC_PRICE")
-    private int disPrice;
-
     @Column(name = "PUBLISHER", nullable = false)
     private String publisher;
 
@@ -41,10 +38,6 @@ public class Book {
     private String bookDesc;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MBTI_INDEX", nullable = false)
+    @JoinColumn(name = "MBTI_NAME", nullable = false)
     private Mbti mbti;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "S_POINT", nullable = false)
-    private Like sPoint;
 }

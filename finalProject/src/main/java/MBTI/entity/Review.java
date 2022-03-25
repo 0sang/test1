@@ -5,26 +5,25 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "REVIEW")
 @Data
 public class Review {
 
     @Id
-    @Column(name = "R_INDEX")
-    private int rIndex;
+    @Column(name = "REVIEW_INDEX")
+    private int index;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ISBN", nullable = false)
-    private Book isbn;
+    @JoinColumn(name = "BOOK_ISBN", nullable = false)
+    private Book book;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID")
-    private User writer;
+    @JoinColumn(name = "USER_ID", nullable = false)
+    private User user;
 
-    @Column(name = "REVIEW")
+    @Column(name = "REVIEW", nullable = false)
     private String review;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "")
-    private Like like;
+//, nullable = false 별점에도 넣나?
+    @Column(name = "RATING")
+    private int rating;
 }
